@@ -5,6 +5,16 @@ const GTM_ID = 'GTM-MMTVDWM';
 
 export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   setHeadComponents([
+    <script key="gtag-js" async src="https://www.googletagmanager.com/gtag/js?id=G-NTY2GFSYPX"></script>,
+    <script key="gtag-dataLayer" dangerouslySetInnerHTML={{
+      __html:
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NTY2GFSYPX');`
+      }}>
+    </script>,
     <script
       key="google-gtag-manager"
       dangerouslySetInnerHTML={{
@@ -32,12 +42,8 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       key="google-noscript-manager"
       dangerouslySetInnerHTML={{
         __html: `
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
-          height="0"
-          width="0"
-          style="display: none; visibility: hidden"
-        ></iframe>`,
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMTVDWM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
       }}
     ></noscript>,
   ]);
